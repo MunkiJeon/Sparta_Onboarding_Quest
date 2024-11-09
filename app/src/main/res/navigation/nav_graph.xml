@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.sparta_onboarding_quest.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.sparta_onboarding_quest.ui.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.sparta_onboarding_quest.ui.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" />
+
+    <action
+        android:id="@+id/move_to_signin"
+        app:destination="@id/signinFragment"/>
+    <action
+        android:id="@+id/move_to_signup"
+        app:destination="@id/signupFragment"/>
+    <action
+        android:id="@+id/move_to_home"
+        app:destination="@id/homeFragment"/>
+</navigation>

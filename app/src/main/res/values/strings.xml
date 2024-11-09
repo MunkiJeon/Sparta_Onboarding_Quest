@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sparta_Onboarding_Quest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Home_Title">Home_Title</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
