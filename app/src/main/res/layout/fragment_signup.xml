@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.SignupFragment">
 
     <ImageButton
@@ -11,8 +12,6 @@
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
         android:translationZ="100dp"
         android:src="@drawable/baseline_arrow_back_ios_new_24"
         android:background="@android:color/transparent"
@@ -34,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="76dp"
+        android:paddingVertical="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,26 +43,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/signup_required_areas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/signup_required_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="* 필수 입력 항목"
+                    android:textColor="@color/md_theme_error"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/signup_id_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="아이디 *"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/signup_required_title" />
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_id"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="아이디는 12자 이내로 입력해 주세요"
+                    android:hint="아이디는 12자 이내 영문,숫자로 입력해 주세요"
                     android:inputType="text"
                     android:maxLength="12"
                     android:maxLines="1"
@@ -96,10 +110,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/signup_pw_title" />
 
                 <ToggleButton
+                    android:id="@+id/signup_pw_visibility"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/pw_visible"
                     android:layout_marginEnd="8dp"
+                    android:background="@drawable/pw_visible"
                     android:textOff=""
                     android:textOn=""
                     app:layout_constraintBottom_toBottomOf="@+id/signup_pw"
@@ -128,18 +143,19 @@
                     android:maxLength="12"
                     android:maxLines="1"
 
-                    app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/material_dynamic_primary30"
-
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/signup_pwck_title" />
+
+                    app:layout_constraintTop_toBottomOf="@+id/signup_pwck_title"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/material_dynamic_primary30" />
 
                 <ToggleButton
+                    android:id="@+id/signup_pwck_visibility"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/pw_visible"
                     android:layout_marginEnd="8dp"
+                    android:background="@drawable/pw_visible"
                     android:textOff=""
                     android:textOn=""
                     app:layout_constraintBottom_toBottomOf="@+id/signup_pwck"
@@ -147,7 +163,191 @@
                     app:layout_constraintTop_toTopOf="@+id/signup_pwck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/signup_additional_areas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/signup_additional_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="추가 입력"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/signup_name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="이름"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_additional_title" />
+
+                <EditText
+                    android:id="@+id/signup_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="이름을 입력해 주세요."
+                    android:maxLength="20"
+                    android:inputType="text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_name_title" />
+
+
+                <TextView
+                    android:id="@+id/signup_gender_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:text="성별"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/signup_name_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/signup_name_title" />
+
+
+                <ToggleButton
+                    android:id="@+id/signup_gender"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/md_theme_errorContainer"
+                    android:text="ToggleButton"
+                    android:textOff="남성"
+                    android:textOn="여성"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_gender_title"
+                    app:layout_constraintStart_toStartOf="@+id/signup_gender_title"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_gender_title" />
+
+                <TextView
+                    android:id="@+id/signup_mbti_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="MBTI"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_name" />
+
+                <TextView
+                    android:id="@+id/signup_age_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나이"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_gender"
+                    app:layout_constraintStart_toStartOf="@+id/signup_gender"
+                    app:layout_constraintTop_toTopOf="@+id/signup_mbti_title" />
+
+                <NumberPicker
+                    android:id="@+id/signup_age_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+
+                    android:layout_marginTop="8dp"
+                    android:background="@color/md_theme_errorContainer"
+                    android:solidColor="@color/md_theme_onPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_age_title"
+                    app:layout_constraintStart_toStartOf="@+id/signup_age_title"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_mbti_title" />
+
+                <ToggleButton
+                    android:id="@+id/signup_mbti_ei"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/md_theme_errorContainer"
+                    android:text="ToggleButton"
+                    android:textIsSelectable="false"
+                    android:textOff="E"
+                    android:textOn="I"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/signup_age_picker"
+                    app:layout_constraintBottom_toBottomOf="@+id/signup_age_picker"/>
+
+                <ToggleButton
+                    android:id="@+id/signup_mbti_sn"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@color/md_theme_errorContainer"
+                    android:text="ToggleButton"
+                    android:textOff="S"
+                    android:textOn="N"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/signup_mbti_ei"
+                    app:layout_constraintStart_toEndOf="@+id/signup_mbti_ei"
+                    app:layout_constraintTop_toTopOf="@+id/signup_mbti_ei"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ToggleButton
+                    android:id="@+id/signup_mbti_tf"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@color/md_theme_errorContainer"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textOff="T"
+                    android:textOn="F"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/signup_mbti_sn"
+                    app:layout_constraintStart_toEndOf="@+id/signup_mbti_sn"
+                    app:layout_constraintTop_toTopOf="@+id/signup_mbti_sn"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ToggleButton
+                    android:id="@+id/signup_mbti_jp"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@color/md_theme_errorContainer"
+                    android:text="ToggleButton"
+                    android:textOff="J"
+                    android:textOn="P"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/signup_mbti_tf"
+                    app:layout_constraintStart_toEndOf="@+id/signup_mbti_tf"
+                    app:layout_constraintTop_toTopOf="@+id/signup_mbti_tf"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_supSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="회원가입"
+        android:textSize="20dp"
+        android:enabled="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
