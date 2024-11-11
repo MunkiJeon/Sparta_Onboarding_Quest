@@ -11,7 +11,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
     </fragment>
-
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.example.sparta_onboarding_quest.ui.SignupFragment"
@@ -21,7 +20,11 @@
         android:id="@+id/signinFragment"
         android:name="com.example.sparta_onboarding_quest.ui.SigninFragment"
         android:label="fragment_signin"
-        tools:layout="@layout/fragment_signin" />
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signinFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <action
         android:id="@+id/move_to_signin"

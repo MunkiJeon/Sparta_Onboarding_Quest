@@ -23,8 +23,6 @@ class SignupFragment : Fragment() {
     private var _binding: FragmentSignupBinding? = null
     private val binding get() = _binding!!
 
-    private val userDataManager = UserDataManager(requireActivity())
-
     private var idCheck = false
     private var pwCheck = false
     private var pwckCheck = false
@@ -97,18 +95,17 @@ class SignupFragment : Fragment() {
                     strName = signupName.text.toString()
                 }
 
-//                Log.d("userdata","${signupId.text}\n" +
-//                        "${signupPw.text}\n" +
-//                        "${signupName.text} ${strMbti} ${strGender} ${strAge}")
-//                userDataManager.saveUserData(
-//                    userId = signupId.text.toString(),
-//                    password = signupPw.text.toString(),
-//                    name = strName,
-//                    birthDate = strAge,
-//                    gender = strGender,
-//                    mbti = strMbti
-//                )
-                findNavController().navigate(R.id.move_to_signin)
+                val userDataManager = UserDataManager(requireContext())
+                userDataManager.saveUserData(
+                    userId = signupId.text.toString(),
+                    password = signupPw.text.toString(),
+                    name = strName,
+                    birthDate = strAge,
+                    mbti = strMbti,
+                    gender = strGender
+                )
+//                findNavController().navigate(R.id.move_to_signin)
+                findNavController().navigate(R.id.move_to_home)
             }
         }
         return root
