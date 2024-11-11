@@ -8,7 +8,7 @@
     tools:context=".ui.SigninFragment">
 
     <ImageButton
-        android:id="@+id/sigin_back"
+        android:id="@+id/signin__back"
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:scaleType="fitCenter"
@@ -24,10 +24,10 @@
         android:text="로그인"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/sigin_back"
+        app:layout_constraintBottom_toBottomOf="@+id/signin__back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sigin_back"/>
+        app:layout_constraintTop_toTopOf="@+id/signin__back"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/sigin_id_title"
+            android:id="@+id/signin__id_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="아이디 *"
@@ -50,18 +50,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sigin_id"
+            android:id="@+id/signin__id"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="영문(2자) + 숫자 4~12자"
             android:inputType="text"
             android:maxLength="12"
             android:maxLines="1"
-            app:layout_constraintStart_toStartOf="@+id/sigin_id_title"
-            app:layout_constraintTop_toBottomOf="@+id/sigin_id_title" />
+            app:layout_constraintStart_toStartOf="@+id/signin__id_title"
+            app:layout_constraintTop_toBottomOf="@+id/signin__id_title" />
 
         <TextView
-            android:id="@+id/sigin_pw_title"
+            android:id="@+id/signin__pw_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -69,11 +69,11 @@
             android:text="비밀번호 *"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/sigin_id"
-            app:layout_constraintTop_toBottomOf="@+id/sigin_id" />
+            app:layout_constraintStart_toStartOf="@+id/signin__id"
+            app:layout_constraintTop_toBottomOf="@+id/signin__id" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sigin_pw"
+            android:id="@+id/signin__pw"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -83,23 +83,23 @@
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sigin_pw_title" />
+            app:layout_constraintTop_toBottomOf="@+id/signin__pw_title" />
 
         <ToggleButton
-            android:id="@+id/sigin_pw_visibility"
+            android:id="@+id/signin__pw_visibility"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/pw_visible"
             android:textOff=""
             android:textOn=""
-            app:layout_constraintBottom_toBottomOf="@+id/sigin_pw"
-            app:layout_constraintEnd_toEndOf="@+id/sigin_pw"
-            app:layout_constraintTop_toTopOf="@+id/sigin_pw" />
+            app:layout_constraintBottom_toBottomOf="@+id/signin__pw"
+            app:layout_constraintEnd_toEndOf="@+id/signin__pw"
+            app:layout_constraintTop_toTopOf="@+id/signin__pw" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/sigin_login"
+        android:id="@+id/signin__login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그인"

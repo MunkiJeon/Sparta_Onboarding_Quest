@@ -22,12 +22,17 @@ class SigninFragment : Fragment() {
         val root : View = binding.root
 
         binding.apply {
-            siginPwVisibility.setOnCheckedChangeListener { buttonView, isChecked ->
-                if (isChecked){ siginPw.inputType = 128 } // 비번 가림 해제
-                else{ siginPw.inputType = 129 } //비번 가림 설정
+            signinBack.setOnClickListener {
+                findNavController().navigate(R.id.move_to_home)
             }
 
-            siginLogin.setOnClickListener {
+
+            signinPwVisibility.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked){ signinPw.inputType = 128 } // 비번 가림 해제
+                else{ signinPw.inputType = 129 } //비번 가림 설정
+            }
+
+            signinLogin.setOnClickListener {
                 findNavController().navigate(R.id.move_to_home)
             }
         }
